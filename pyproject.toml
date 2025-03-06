@@ -1,0 +1,55 @@
+[project]
+name = "fast_api_boilerplate"
+version = "0.1.0"
+description = ""
+authors = [{ name = "egorgurtyakin", email = "egorgurtyakin@gmail.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.13"
+
+
+# see the https://python-poetry.org/docs/pyproject#dependencies
+# https://python-poetry.org/docs/dependency-specification/#projectdependencies-and-toolpoetrydependencies
+dependencies = [
+    # web framework for building APIs
+    # https://fastapi.tiangolo.com/
+    "fastapi (>=0.115.11,<0.116.0)",
+]
+
+
+# https://python-poetry.org/docs/basic-usage/#operating-modes
+[tool.poetry]
+package-mode = false
+
+
+[tool.poetry.group.test.dependencies]
+# great testing framework
+# https://docs.pytest.org/en/stable/
+pytest = "^8.3.5"
+# To run test in parallel
+# Docs: https://pypi.org/project/pytest-xdist/
+pytest-xdist = "^3.6.1"
+# Prettier tests output
+pytest-sugar = "^1.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+# ✨blazingly fast✨ linter written in rust🦀
+# https://docs.astral.sh/ruff/
+ruff = "^0.9.9"
+# Exports functions to access the IPython debugger, which features tab completion, syntax highlighting, better tracebacks
+# https://github.com/gotcha/ipdb
+ipdb = "^0.13.13"
+# Provides a rich toolkit to help you make the most of using Python interactively
+# https://ipython.readthedocs.io/en/stable/
+ipython = "^9.0.1"
+
+
+[tool.poetry.group.local.dependencies]
+# A framework for managing and maintaining multi-language pre-commit hooks.
+# https://pre-commit.com/
+pre-commit = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
